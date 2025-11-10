@@ -3,15 +3,24 @@ window.promises = [];
 // Do not change the code above this
 // add your promises to the array `promises`
 
-let p1 = Promise.resolve("P1", 1000);
-let p2 = Promise.resolve("P2", 2000);
-let p3 = Promise.resolve("P3", 3000);
-let p4 = Promise.resolve("P4", 4000);
-let p5 = Promise.resolve("P5", 5000);
+let outputDiv = document.getElementById("output");
 
-Promise.any([p1,p2,p3,p4,p5])
-.then((res)=>{
-	console.log(result);
+function createPromise(name){
+	const time = Math.floor(Math.random() * 5 + 1) * 1000;
+	return new Promise((resolve)=>{
+		setTimeout(()=>{
+			resolve(`Promise ${name} resolved in ${time / 1000}s`);
+		}, time)
+	})
+}
+
+for(let i =0; i<5; i++){
+	window.promise.push(createPromise(i))
+}
+
+Promise.any(windowa.promise)
+.then((result)=>{
+	outputDiv .textContent = result;
 })
 .catch((err)=>{
 	console.log(err);
