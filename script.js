@@ -15,7 +15,7 @@ function createPromise(name){
 }
 
 for(let i =0; i<5; i++){
-	window.promise.push(createPromise(i))
+	window.promise.push(promise)
 }
 
 Promise.any(windowa.promise)
@@ -23,5 +23,5 @@ Promise.any(windowa.promise)
 	outputDiv .textContent = result;
 })
 .catch((err)=>{
-	console.log(err);
+	 outputDiv.textContent = "All promises rejected";
 })
