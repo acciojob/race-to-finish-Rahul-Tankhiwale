@@ -15,7 +15,7 @@ function createPromise(name){
 }
 
 for(let i =0; i<5; i++){
-	window.promise.push(promise)
+	window.promise.push(promises)
 }
 
 Promise.any(windowa.promise)
